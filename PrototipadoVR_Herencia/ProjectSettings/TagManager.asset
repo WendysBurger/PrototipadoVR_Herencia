@@ -31,6 +31,7 @@ TagManager:
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
   - QDSUIToggleThumbnail
+  - Grama
   layers:
   - Default
   - TransparentFX
@@ -38,8 +39,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - suelo
+  - player
   - 
   - 
   - 
