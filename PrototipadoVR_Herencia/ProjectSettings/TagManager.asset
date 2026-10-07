@@ -33,6 +33,7 @@ TagManager:
   - QDSUIToggleThumbnail
   - Grama
   - pala
+  - Mesa
   layers:
   - Default
   - TransparentFX
