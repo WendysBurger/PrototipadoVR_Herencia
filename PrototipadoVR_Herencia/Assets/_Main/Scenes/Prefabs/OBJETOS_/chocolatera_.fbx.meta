@@ -3,7 +3,27 @@ guid: 265d9d8ec3502f340ada50add0b98d9f
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chocolatera_
+    second: {fileID: 2100000, guid: 9847ccdab3700294f81aa4741f749fdf, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Chocolatera_-Color
+    second: {fileID: 2800000, guid: 2940f3ca91060a946935fb5fb1e9dda7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Chocolatera_-Meta\u0301lico"
+    second: {fileID: 2800000, guid: a8b52522068c8f540a84c01d0d9850ab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Chocolatera_-Rugosidad_f
+    second: {fileID: 2800000, guid: 4cb5f442c0dd35c40be2d8b3e8a10f2c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

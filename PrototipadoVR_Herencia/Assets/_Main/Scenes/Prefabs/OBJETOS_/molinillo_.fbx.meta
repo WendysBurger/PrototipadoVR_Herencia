@@ -3,7 +3,27 @@ guid: 75db1fdbd12beae45adc39477af6ea09
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Molinillo_c
+    second: {fileID: 2100000, guid: d9388ae18b2b2b04d965d4aecf243d75, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Molinillo_c-Color
+    second: {fileID: 2800000, guid: edff4d3cdca818a4d88bc3b3471c4753, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Molinillo_c-Meta\u0301lico"
+    second: {fileID: 2800000, guid: 578d9bb0f86deb24b941c75a510caedb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Molinillo_c-Rugosidad
+    second: {fileID: 2800000, guid: 40df964251f7a614dbca20c2e35fc210, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

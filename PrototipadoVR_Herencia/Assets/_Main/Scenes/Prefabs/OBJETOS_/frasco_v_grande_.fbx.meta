@@ -3,7 +3,32 @@ guid: 6e0cbd19ccc31c642bed0e88b6f554f5
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frasco_v_l
+    second: {fileID: 2100000, guid: 85ec4ab44c0c67b42a8d4923a7d425b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frasco_v_l_alpha
+    second: {fileID: 2100000, guid: a9a1677116eebe54b958481fc38501cb, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Frasco_v_l-Color
+    second: {fileID: 2800000, guid: 9f087f1db0cdc37479ff703d17255c44, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Frasco_v_l-Meta\u0301lico"
+    second: {fileID: 2800000, guid: ac06b9cccceb79a4eba937192ac6eceb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Frasco_v_l-Rugosidad
+    second: {fileID: 2800000, guid: 862ebeb4b23ab33458cd58def18b7c51, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

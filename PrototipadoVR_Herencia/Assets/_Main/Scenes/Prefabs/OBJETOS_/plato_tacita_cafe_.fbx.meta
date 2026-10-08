@@ -3,7 +3,27 @@ guid: c273ee2b155ef574c81285ec995f13e0
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platito_t
+    second: {fileID: 2100000, guid: b31a22d1fd1ece5448391714f77f0acd, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Platito_t-Color
+    second: {fileID: 2800000, guid: e56a8f38f3369b848aeba7f5db933a2e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Platito_t-Meta\u0301lico"
+    second: {fileID: 2800000, guid: fd3b1a48a14a2344bbe25d822de08cb2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Platito_t-Rugosidad
+    second: {fileID: 2800000, guid: a09e7a7ebd57f2147ad002a59f08667a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

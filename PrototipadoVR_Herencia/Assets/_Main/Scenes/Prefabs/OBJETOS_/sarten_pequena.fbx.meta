@@ -3,7 +3,27 @@ guid: 94f9418fec1e49741a7ee42ef6cdda13
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sarten_P
+    second: {fileID: 2100000, guid: 93204a0e0da7b9f468ca3e175a095dd6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sarten_P-Color
+    second: {fileID: 2800000, guid: f05bbffcee71f4948877c99fa5a458f3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Sarten_P-Meta\u0301lico"
+    second: {fileID: 2800000, guid: 3cc5bcfde86924b458a4a2a2510d9785, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Sarten_P-Rugosidad
+    second: {fileID: 2800000, guid: a9d09540129fba24c8f3382c724c6604, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

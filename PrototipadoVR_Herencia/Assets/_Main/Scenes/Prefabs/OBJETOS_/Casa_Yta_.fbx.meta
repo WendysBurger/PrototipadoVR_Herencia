@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: cbfd8143972e12343aadc2e9d408c57f
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Columnas_madera
+    second: {fileID: 2100000, guid: 128bf77eab22e7340af221b0a7960ade, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Frame_ventana_G
+    second: {fileID: 2100000, guid: 61067e099050f4f42859b872922c96f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mesa_
+    second: {fileID: 2100000, guid: b02361467a739bb4692ed13695268ce3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ventana_frame_P
+    second: {fileID: 2100000, guid: 5a7dec665a1dca34792b185fac6cefbf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baldosa_beige
+    second: {fileID: 2100000, guid: d69b0cb4ca4a7814cac30825d24825f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: baldosa_blanca_
+    second: {fileID: 2100000, guid: 64e284ba8999c11459116593f5802bd7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: columnas_rectangulares
+    second: {fileID: 2100000, guid: 6cb1db0e8f653ff4b8b7514bafd7e6d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frame_puertas
+    second: {fileID: 2100000, guid: 6fa16f2f0ae129d42aa10a84bc65309c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: madera_techo_
+    second: {fileID: 2100000, guid: de44bd79669a79148b06d7a8c49528f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paredes_cuartos
+    second: {fileID: 2100000, guid: 5b17808382281e346b62fa8985c69104, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pergola_techo_
+    second: {fileID: 2100000, guid: 97e8cb6a9102431408ac9064b3432b4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pintura_casa_int_ext_
+    second: {fileID: 2100000, guid: 6a046f699de81884fa9c0bc2cb0b3f03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: puerta_
+    second: {fileID: 2100000, guid: 64b093634e7240c4e990127153f924a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soporte_pergola
+    second: {fileID: 2100000, guid: 769592ef677ce6844bf3289f9175ade4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soportes_columnas
+    second: {fileID: 2100000, guid: 53c7b68df331dde409491c02f6d30e63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: soprtes_c_rect
+    second: {fileID: 2100000, guid: 33277607754c83a48b2aa8aa5d2b92a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: techo_negro
+    second: {fileID: 2100000, guid: b7de41f54c8f32f44ba22b161582d981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: techo_pergola_
+    second: {fileID: 2100000, guid: 228b8553b072e40449bae06af650b8c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: teja_arcilla
+    second: {fileID: 2100000, guid: f6972d1924c32c9438a989961cd37d62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tejas_top_vert
+    second: {fileID: 2100000, guid: 6010e32d739765043b070609aa175030, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Frame_puertas
+    second: {fileID: 2800000, guid: 045c8af29d5b2e94890ed2339eb1f745, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Frame_ventana_P
+    second: {fileID: 2800000, guid: 467dd06996ca84d47a67528863beb7cb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mesa_-Color
+    second: {fileID: 2800000, guid: abfb12be23b0f8442b3dfc2089a8fb78, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mesa_-Color_normal-3
+    second: {fileID: 2800000, guid: 46f956ab51a25824399c7352d0f5fa1e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Paredes_Int_cuartos_
+    second: {fileID: 2800000, guid: ea8666e1d132721488f4f2be78c85126, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Puertas_
+    second: {fileID: 2800000, guid: 18d1cecad9aaab542aeb3f52a8bf2d76, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baldosa_blanca
+    second: {fileID: 2800000, guid: 6464eeebbb006bf4081134e706c56f89, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baldosa_blanca_normal
+    second: {fileID: 2800000, guid: 798b24c2691dbf54b8ca9b39b87b22b3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: baldosa_blanca_rugosidad
+    second: {fileID: 2800000, guid: e2fb3ca0f6b885348a37e2e20922b4f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: columnas_madera
+    second: {fileID: 2800000, guid: 9f980f6f2b750e24d8023209a148451e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: columnas_madera_normal
+    second: {fileID: 2800000, guid: 26a4035a6e5531c40a7ef6a36edee457, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: columnas_rectangulares
+    second: {fileID: 2800000, guid: cb4d3467496c8984f8e9d83d108bf01d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: columnas_rectangulares_normal
+    second: {fileID: 2800000, guid: b990237a429ce9140998c637bf123007, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: frame_ventanas_G
+    second: {fileID: 2800000, guid: 8810821f9dc89424f96a65d727912306, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paredes_ext_int
+    second: {fileID: 2800000, guid: a70a04196671f214ba743e2cb779d513, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: paredes_ext_int_normal
+    second: {fileID: 2800000, guid: a4cf739271e93d14d9482a77a8c78bcf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pergola_techo_1
+    second: {fileID: 2800000, guid: e8156534c6ba46d4792ae5c8d9f4a5f3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pergola_techo_1_normal-2
+    second: {fileID: 2800000, guid: eb1242bafe98e6d4fa624157a28a2956, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: soporte_c_rect
+    second: {fileID: 2800000, guid: 43ad6277bb63395409c8e230014ffd1b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: soporte_pergola
+    second: {fileID: 2800000, guid: 587d40e354e76444ca156e62b7fe6acb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: soportes_columnas
+    second: {fileID: 2800000, guid: 6b2db59474d199f4a96a2eaa38ffcb1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: techo_
+    second: {fileID: 2800000, guid: da668bf6aa150b8479f6d18a8c258edb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: techo_madera
+    second: {fileID: 2800000, guid: eaf518c1fdb6189409cd32004ab19854, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: techo_pergola_2
+    second: {fileID: 2800000, guid: cfe16553a5af20c42ba22aa396bd0fca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: techo_pergola_2_normal
+    second: {fileID: 2800000, guid: 6ff988f01da55c54ca183498f4d7916b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tejas_arcilla
+    second: {fileID: 2800000, guid: e2b5d88d63f84354caddd00fe4e10e00, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tejas_arcilla_normal
+    second: {fileID: 2800000, guid: c918a40facade1a4594da984e627d135, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tejas_top_vert
+    second: {fileID: 2800000, guid: a3f6494903634d34caf314fd6443953b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: tejas_top_vert_normal
+    second: {fileID: 2800000, guid: 67c26981c6a326945abddec4494bed40, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

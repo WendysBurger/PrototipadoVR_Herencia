@@ -5,20 +5,25 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vaso_g
+    second: {fileID: 2100000, guid: 1871cb1898588254dbaf824f30331023, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: vaso_g-Color
-    second: {fileID: 2800000, guid: 774a6eed668ca51468f1fd09bd46b30f, type: 3}
+    second: {fileID: 2800000, guid: c51e11c8ed3cbd847906885f1f41020c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: "vaso_g-Meta\u0301lico"
-    second: {fileID: 2800000, guid: b8b8e6612303a874abcb94db59bb923b, type: 3}
+    second: {fileID: 2800000, guid: 9ce2e11766fd5ec4385460d4b1869ac1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: vaso_g-Rugosidad
-    second: {fileID: 2800000, guid: aa2d01b51b1af7e4b962a2b355996622, type: 3}
+    second: {fileID: 2800000, guid: a0b174bce64399f48966e19eb8bb6ba1, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

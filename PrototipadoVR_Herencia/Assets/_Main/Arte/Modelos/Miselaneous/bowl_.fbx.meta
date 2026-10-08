@@ -3,7 +3,27 @@ guid: 7b8c317f8e96c67478f371cbc5e84dda
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bowl_
+    second: {fileID: 2100000, guid: d0ce767f433464844bd25a6befe139d5, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bowl_-Color
+    second: {fileID: 2800000, guid: 724f76dfdf9fdaa4cb1ea57f4ec5a3fe, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "bowl_-Meta\u0301lico"
+    second: {fileID: 2800000, guid: a8f11e99d9b280049adcbc5049fc331f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bowl_-Rugosidad
+    second: {fileID: 2800000, guid: ced216fd29699c442812a7ac931d8953, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

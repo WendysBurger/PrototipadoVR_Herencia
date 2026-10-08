@@ -3,7 +3,32 @@ guid: 08d8b227822b09342a0ffc4ac97ae48d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Salero_
+    second: {fileID: 2100000, guid: 03ba2498be7121647bfa3958691ffd94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Salero_alpha
+    second: {fileID: 2100000, guid: 43b361641b8a69049bb6ae882df70d0b, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Salero_-Color
+    second: {fileID: 2800000, guid: b84b430b0d5f6954b8fec43b30f0e271, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Salero_-Meta\u0301lico"
+    second: {fileID: 2800000, guid: 5bde0794812131047af54eaad629afb6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Salero_-Rugosidad
+    second: {fileID: 2800000, guid: c9f61cdd1d1382c43909ef7996d3479a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

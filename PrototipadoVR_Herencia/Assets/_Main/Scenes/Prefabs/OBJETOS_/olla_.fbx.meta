@@ -3,7 +3,27 @@ guid: b236c2d9810047441a34cb0968b2014e
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Olla_
+    second: {fileID: 2100000, guid: e2b3ab375f8f3664b9053313ddf0dfef, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Olla_-Color
+    second: {fileID: 2800000, guid: c5d81f3fb64147d4bb81a2503a15c8e3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Olla_-Meta\u0301lico"
+    second: {fileID: 2800000, guid: 8d869d408f3df4247b3a60b59a3a2ad2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Olla_-Rugosidad
+    second: {fileID: 2800000, guid: 40b6e7c2aeee80b41a15205740a87b4d, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

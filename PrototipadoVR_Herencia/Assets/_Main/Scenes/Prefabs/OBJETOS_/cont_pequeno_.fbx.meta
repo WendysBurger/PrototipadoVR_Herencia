@@ -3,7 +3,27 @@ guid: cfa034a929a6e724693124b632e3e928
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cont_p
+    second: {fileID: 2100000, guid: 4a93ee03f98f5374fb2bc924be430fcb, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cont_p-Color
+    second: {fileID: 2800000, guid: 952233d3dc1ce0c41804087800c3678c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Cont_p-Meta\u0301lico"
+    second: {fileID: 2800000, guid: 29feea2a270007544819ba3c9fc8326a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Cont_p-Rugosidad
+    second: {fileID: 2800000, guid: 16b1cd5d590a0804183cee6a9aabcb2a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

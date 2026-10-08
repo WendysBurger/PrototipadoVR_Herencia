@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Main/Scenes/TEst TErreno.unity
-    guid: f7566833b94d97344b41b4640fe7860d
+    path: Assets/_Main/Scenes/Acto 1.unity
+    guid: b44ae4a62698ec84bba7da83e3c2f33f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5b4dc962e2a17c446bd34c1a2cc8790a, type: 2}

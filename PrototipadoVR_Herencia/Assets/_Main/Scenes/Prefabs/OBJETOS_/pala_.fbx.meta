@@ -3,7 +3,27 @@ guid: fd67c0d25e069a84a8f8f9fef238a625
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pala_
+    second: {fileID: 2100000, guid: 2a190fef2adf3644c9b3d8f2bcc7fa94, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pala_-Color
+    second: {fileID: 2800000, guid: b599f9eb02e2f444a88809bd4928112f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Pala_-Meta\u0301lico"
+    second: {fileID: 2800000, guid: 1db825f6f855cbd4cad699e0b70a7e03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pala_-Rugosidad
+    second: {fileID: 2800000, guid: 0c8351469a2e6b643b0e8f86a6e1a10e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
