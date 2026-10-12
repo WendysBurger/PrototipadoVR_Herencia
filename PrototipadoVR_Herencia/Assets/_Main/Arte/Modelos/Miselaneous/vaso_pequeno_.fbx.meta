@@ -3,7 +3,12 @@ guid: 9f39083525d34074fafd3f09728e6635
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vaso_p
+    second: {fileID: 2100000, guid: 6179563ee588480597a83d80e4b3f0a9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
