@@ -5469,7 +5469,8 @@ MonoBehaviour:
   capasJugador:
     serializedVersion: 2
     m_Bits: 1
-  audios: []
+  audios:
+  - {fileID: 8300000, guid: 6656d1db8700a4f45a5c0220e1dc5c18, type: 3}
   estadoActual: 0
   tiempoCambioEstado: 2
 --- !u!82 &111522180
@@ -9189,9 +9190,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   audios:
-  - {fileID: 8300000, guid: bdce619d7eb3d094ca38fa818b62c857, type: 3}
-  - {fileID: 8300000, guid: 4c74ab52527669d4aad3d960773562b7, type: 3}
-  - {fileID: 8300000, guid: 67b4176f879610b4aa879da89cd77e5c, type: 3}
+  - {fileID: 8300000, guid: f7c2115356901494eb0bdc097d169993, type: 3}
+  - {fileID: 8300000, guid: 3712998391f597c499d5cd6984f788da, type: 3}
+  - {fileID: 8300000, guid: d7f029d4ba6b5174c847788052d9fb70, type: 3}
   estadoActual: 0
   tiempoCambioEstado: 14
 --- !u!54 &637935189
@@ -9954,7 +9955,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   audios:
-  - {fileID: 8300000, guid: bdce619d7eb3d094ca38fa818b62c857, type: 3}
+  - {fileID: 8300000, guid: 73a2193288c92db41a8f6a8c0b22f481, type: 3}
   estadoActual: 0
 --- !u!82 &688312661
 AudioSource:
@@ -16421,7 +16422,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   audios:
-  - {fileID: 8300000, guid: 67b4176f879610b4aa879da89cd77e5c, type: 3}
+  - {fileID: 8300000, guid: f67cc4fee05ba764998aae62c03aed8c, type: 3}
   estadoActual: 0
 --- !u!82 &1403349134
 AudioSource:
@@ -24114,7 +24115,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   audios:
-  - {fileID: 8300000, guid: 4c74ab52527669d4aad3d960773562b7, type: 3}
+  - {fileID: 8300000, guid: acce0a16b4811a04e8c5b8c85c92a5b5, type: 3}
   estadoActual: 0
   tiempoCambioEstado: 2
 --- !u!82 &1689159027
@@ -27621,9 +27622,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pala
   tagJugador: Player
-  audioEstado1: {fileID: 8300000, guid: bdce619d7eb3d094ca38fa818b62c857, type: 3}
-  audioEstado2: {fileID: 8300000, guid: 67b4176f879610b4aa879da89cd77e5c, type: 3}
-  audioEstado3: {fileID: 8300000, guid: f174b0e60f631e94796b4552db40dda1, type: 3}
+  audioEstado1: {fileID: 8300000, guid: ab1afdb133d3a4c49b46d3e9040d8561, type: 3}
+  audioEstado2: {fileID: 8300000, guid: a3c89461d0fa9bd4f9879441c5e8b624, type: 3}
+  audioEstado3: {fileID: 8300000, guid: ca6aae7442d4e9848aeb015d7d78a5c8, type: 3}
   esperaEstado2: 15
   sistemaParticulas: {fileID: 1417240686}
   rendererObjeto: {fileID: 762543162}
