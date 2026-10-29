@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7e538b5b9036b45b98039d71bf6c3a7b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 372864
+  packageName: Get Started with Shader Graph | Complete Project
+  packageVersion: 1.1
+  assetPath: Assets/_GetStartedWithShaderGraph/Shaders/Final Shaders/FinalLiquid_Bottle.mat
+  uploadId: 901268

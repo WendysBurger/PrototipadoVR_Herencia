@@ -37,6 +37,7 @@ TagManager:
   - Piedra
   - Baldosa
   - olla
+  - Cuchara
   layers:
   - Default
   - TransparentFX
