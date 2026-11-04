@@ -1,0 +1,285 @@
+fileFormatVersion: 2
+guid: 4520a7afb2b6c9f4db5a9eba9608635e
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Matera_
+    second: {fileID: 2100000, guid: fae3b2077e7854a46a9fa0df898bff1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pipeta_gas
+    second: {fileID: 2100000, guid: 1405f863eecb74f47a24a52c402ed50c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silla_yta
+    second: {fileID: 2100000, guid: 6022da766a8ebe74c8e7caf354eb3175, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cajitas_
+    second: {fileID: 2100000, guid: 1defa692bbecced4184d3dfe344cb2c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cajon_abierto
+    second: {fileID: 2100000, guid: 0e1e734377a299e489318f8c53c36caf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cajon_horizontal
+    second: {fileID: 2100000, guid: c6046fdad3b3c83488f67af57f70b657, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cajones_
+    second: {fileID: 2100000, guid: 151b63b6eedc10b4bbc08cb18bcdde8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cajones_meson_cocina
+    second: {fileID: 2100000, guid: aba8716035fd07b459bf15ec79ced316, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chain_
+    second: {fileID: 2100000, guid: e0e93c32cafd5a5478798ad25ffa5030, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: estanterias_grandes
+    second: {fileID: 2100000, guid: a2dcbd53b30c3e140b77f32c2f54cd21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: estanterias_pequenas
+    second: {fileID: 2100000, guid: c83b1baf7f6c8a34c8d2f5f361cbde0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hierba_r_1
+    second: {fileID: 2100000, guid: 92c58863d4935154fbf3cff2564fd8f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hierba_r_2
+    second: {fileID: 2100000, guid: 218dfc2b4b2d3a34e8dff5dbc9910eb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: manija
+    second: {fileID: 2100000, guid: ffb4f57913427004895a344d93c3bca4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesa_comedor
+    second: {fileID: 2100000, guid: 4bdb771d411679543bbd9af24dbf6bed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mesita_
+    second: {fileID: 2100000, guid: 44e1e6eb18f8b894c81a27345d84dd5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: meson_
+    second: {fileID: 2100000, guid: 8731a5a27a5b28547ad98be406748af0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nevera
+    second: {fileID: 2100000, guid: 5eadaac578b651246b206cb58607b689, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared_mesita_
+    second: {fileID: 2100000, guid: e8be7a4ffc46d8e41a2da8213d4afe3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: silla_comedor
+    second: {fileID: 2100000, guid: 55ab573f526c9114aa9cc6a9016fc3c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tierrita_
+    second: {fileID: 2100000, guid: 6c05cd41421de9c4bb8bb259734046a5, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pared_mesita_
+    second: {fileID: 2800000, guid: 004329a98d5a51c41ba6b8aaf01ebdc8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pipeta_gas
+    second: {fileID: 2800000, guid: 95ec362f4d5b336408ebd6c960c12623, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cajon_abierto
+    second: {fileID: 2800000, guid: 9db593e0202c10a47a483998fa683f59, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cajon_horizontal
+    second: {fileID: 2800000, guid: 054972aff0cabf24b806bc3972ba81eb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cajones_
+    second: {fileID: 2800000, guid: ee41987dd2112294d86a0691d7077b48, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cajones_meson_cocina
+    second: {fileID: 2800000, guid: adfb811a22b496b4f88915f37f23e25b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: estanterias_grande
+    second: {fileID: 2800000, guid: 5456a6086ba0b6d4fb73599631b02075, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: estanterias_pequenas
+    second: {fileID: 2800000, guid: 922ed5f35b6b023428947c0ff3b9bed8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hierba_rastrera
+    second: {fileID: 2800000, guid: 9e161c4a5fec9254ca4adaf6507df9ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: hierba_rastrera_vertical
+    second: {fileID: 2800000, guid: fb8e9dbe85fb1494abec80776179e676, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mesa_comedor
+    second: {fileID: 2800000, guid: 7f9a10871eb3c5740bc89b3dbef4807e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mesita_
+    second: {fileID: 2800000, guid: 56b3b41644b6fce4d81f3373dc5f2541, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: silla_comedor
+    second: {fileID: 2800000, guid: 36446d82645ea3d488eb5775a3f13421, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: silla_yta
+    second: {fileID: 2800000, guid: 178318301ad42a049a13ba4dfd7ade61, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
