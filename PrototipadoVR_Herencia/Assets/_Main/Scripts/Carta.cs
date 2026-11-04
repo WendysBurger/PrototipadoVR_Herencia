@@ -17,19 +17,22 @@ public class Carta : MonoBehaviour
     public enum TipoCambioMaterial
     {
         ReemplazarMaterial = 0,
-        AgregarMaterial = 1
+        AgregarMaterial = 1,
+        ReemplazarDesdeOtroElement = 2
     }
 
     [System.Serializable]
     public sealed class CambioMaterialObjeto
     {
         public Renderer rendererObjetivo;
-        [Tooltip("Material que se aplicara al tocar la mesa. Asignalo aqui, sin agregarlo al Renderer.")]
+        [Tooltip("Para Reemplazar Material o Agregar Material. No se utiliza en Reemplazar Desde Otro Element.")]
         public Material materialNuevo;
-        [Tooltip("Reemplazar cambia el material anterior. Agregar conserva el anterior y suma una capa, por ejemplo un aura.")]
+        [Tooltip("Reemplazar usa Material Nuevo. Agregar suma una capa. Reemplazar Desde Otro Element copia un material ya asignado en este mismo Renderer.")]
         public TipoCambioMaterial tipoCambio = TipoCambioMaterial.ReemplazarMaterial;
-        [Tooltip("Solo para Reemplazar. Element 0 corresponde a 0; Element 1 corresponde a 1.")]
+        [Tooltip("Element de destino para ambos modos de reemplazo. Para la pared blanca, escribe 10.")]
         [Min(0)] public int indiceMaterialAReemplazar = 0;
+        [Tooltip("Solo para Reemplazar Desde Otro Element. Material existente que se copiara al destino. Para paredes_cuartos, escribe 11.")]
+        [Min(0)] public int indiceMaterialOrigen = 11;
     }
 
     [Header("Deteccion")]
@@ -57,12 +60,16 @@ public class Carta : MonoBehaviour
     [SerializeField] private string tagMesa = "Mesa";
 
     [Header("Cambio de materiales al tocar la mesa")]
-    [Tooltip("Un elemento por objeto. Asigna su Renderer, el material nuevo y la forma de aplicarlo.")]
+    [Tooltip("Un elemento por Renderer. Elige Material Nuevo o copia desde otro Element del mismo Renderer, segun Tipo Cambio.")]
     [SerializeField]
     private CambioMaterialObjeto[] cambiosMateriales = new CambioMaterialObjeto[3]
     {
         new CambioMaterialObjeto(), new CambioMaterialObjeto(), new CambioMaterialObjeto()
     };
+
+    [Header("Cambio de escena despues del audio 3")]
+    [Tooltip("Controlador TransicionEscenaActo4 del Empty raiz que contiene el Global Volume de fundido.")]
+    [SerializeField] private TransicionEscenaActo4 transicionEscena;
 
     // Conserva las referencias serializadas para migrar desde las versiones anteriores.
     [SerializeField, HideInInspector] private Renderer[] renderersObjetivo = new Renderer[3];
@@ -76,6 +83,7 @@ public class Carta : MonoBehaviour
 
     private AudioSource fuenteAudio;
     private Coroutine secuencia;
+    private Coroutine esperaCambioEscena;
     private bool iniciada;
     private bool configuracionValida;
     private readonly List<DatosMateriales> materialesPreparados = new List<DatosMateriales>();
@@ -169,8 +177,29 @@ public class Carta : MonoBehaviour
         contactoMesaCompletado = true;
         AplicarMaterialesFinales();
         ReproducirAudio(audioEstado3);
+        esperaCambioEscena = StartCoroutine(EsperarAudio3YCambiarEscena());
         if (mostrarMensajes)
             Debug.Log("[AudioTriggerTresEstados] Contacto con mesa: audio 3 y cambios de materiales aplicados.", this);
+    }
+
+    private IEnumerator EsperarAudio3YCambiarEscena()
+    {
+        // PrepararAudio fija pitch=1. Espera el clip completo antes del fundido;
+        // el reloj de audio se detiene cuando el sistema de audio esta pausado.
+        double finAudio3 = AudioSettings.dspTime + audioEstado3.length;
+        do { yield return null; }
+        while (fuenteAudio.isPlaying || AudioListener.pause || AudioSettings.dspTime < finAudio3);
+
+        esperaCambioEscena = null;
+        if (transicionEscena == null)
+        {
+            Debug.LogError("Carta: asigna Transicion Escena para realizar el fundido y cargar la escena de destino.", this);
+            yield break;
+        }
+
+        // El controlador conserva el Global Volume entre escenas, sube Weight
+        // de 0 a 1, carga la escena y vuelve a bajarlo de 1 a 0.
+        transicionEscena.CambiarEscena();
     }
 
     private void ReproducirAudio(AudioClip clip)
@@ -274,15 +303,52 @@ public class Carta : MonoBehaviour
         foreach (CambioMaterialObjeto cambio in cambiosMateriales)
         {
             if (cambio == null || cambio.rendererObjetivo == null ||
-                cambio.materialNuevo == null || !usados.Add(cambio.rendererObjetivo))
+                !usados.Add(cambio.rendererObjetivo))
             {
-                Debug.LogError("Asigna un Renderer distinto y un Material Nuevo en cada elemento de Cambios Materiales.", this);
+                Debug.LogError("Asigna un Renderer distinto en cada elemento de Cambios Materiales.", this);
                 materialesPreparados.Clear();
                 return false;
             }
 
             Renderer renderer = cambio.rendererObjetivo;
             Material[] originales = renderer.sharedMaterials;
+
+            if (cambio.tipoCambio == TipoCambioMaterial.ReemplazarDesdeOtroElement)
+            {
+                int destino = cambio.indiceMaterialAReemplazar;
+                int origen = cambio.indiceMaterialOrigen;
+                if (destino < 0 || destino >= originales.Length ||
+                    origen < 0 || origen >= originales.Length ||
+                    originales[origen] == null)
+                {
+                    Debug.LogError("Revisa los indices de destino/origen y el material de origen en '" + renderer.name +
+                        "'. Para la pared, destino=10 y origen=11; ambos deben existir.", this);
+                    materialesPreparados.Clear();
+                    return false;
+                }
+
+                // Mantiene todos los slots y sus indices. Al tocar la mesa,
+                // solo el destino recibe la referencia del material de origen.
+                // No retira Element 10 ni desplaza Element 11, 12, etc.
+                var finalesDesdeElement = (Material[])originales.Clone();
+                finalesDesdeElement[destino] = originales[origen];
+                materialesPreparados.Add(new DatosMateriales
+                {
+                    renderer = renderer,
+                    originales = originales,
+                    iniciales = (Material[])originales.Clone(),
+                    finales = finalesDesdeElement
+                });
+                continue;
+            }
+
+            if (cambio.materialNuevo == null)
+            {
+                Debug.LogError("Asigna Material Nuevo en '" + renderer.name +
+                    "', o elige Reemplazar Desde Otro Element para usar un material del Renderer.", this);
+                materialesPreparados.Clear();
+                return false;
+            }
             var iniciales = new List<Material>(originales);
 
             // Si el material nuevo estaba agregado como capa extra en la version
@@ -381,6 +447,11 @@ public class Carta : MonoBehaviour
 
     private void OnDisable()
     {
+        if (esperaCambioEscena != null)
+        {
+            StopCoroutine(esperaCambioEscena);
+            esperaCambioEscena = null;
+        }
         if (secuencia != null)
         {
             if (mostrarMensajes)
