@@ -25964,11 +25964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5e8f9d400c20994d82279e5ff3ed258, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4883003
+      value: -1.4824
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5e8f9d400c20994d82279e5ff3ed258, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.039
+      value: 2.148
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5e8f9d400c20994d82279e5ff3ed258, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30570,8 +30570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerDosAudiosCambioEscena
   tagJugador: Player
-  primerAudio: {fileID: 8300000, guid: 73a2193288c92db41a8f6a8c0b22f481, type: 3}
-  segundoAudio: {fileID: 8300000, guid: f7c2115356901494eb0bdc097d169993, type: 3}
+  primerAudio: {fileID: 8300000, guid: b6c569a807d323b4aa9cb52c29fba171, type: 3}
+  segundoAudio: {fileID: 8300000, guid: b3d0e82c6b36a0440beec2d9f03748c9, type: 3}
   nombreEscenaDestino: Escena de prueba
   idInteraccion: DosAudiosCambioEscena
 --- !u!82 &2060583074
