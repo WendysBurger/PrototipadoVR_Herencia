@@ -18,17 +18,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Frasco_v_c-Color
-    second: {fileID: 2800000, guid: 37076a5412fdbfc409b4cc6ae6536e48, type: 3}
+    second: {fileID: 2800000, guid: e81bdc1c8ae2a3a4281864aa93ea18ee, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: "Frasco_v_c-Meta\u0301lico"
-    second: {fileID: 2800000, guid: 86850836df56ebf4aaffafa88ed8decd, type: 3}
+    second: {fileID: 2800000, guid: 1b47043cff085d1469a4503951c774e0, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Frasco_v_c-Rugosidad
-    second: {fileID: 2800000, guid: 3083621d076079d4581df4a0db6fb406, type: 3}
+    second: {fileID: 2800000, guid: 5604c106450487846ab1f7c93527e1e7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
