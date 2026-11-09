@@ -12202,6 +12202,11 @@ MonoBehaviour:
     tipoCambio: 1
     indiceMaterialAReemplazar: 0
     indiceMaterialOrigen: 1
+    colorBrillo: {r: 1, g: 0.78, b: 0.35, a: 1}
+    intensidadBrillo: 2.5
+    segundosEncendido: 1.5
+    pulso: 0.25
+    velocidadPulso: 1.5
   transicionEscena: {fileID: 849905630}
   renderersObjetivo:
   - {fileID: 90727061}
@@ -13810,15 +13815,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd67c0d25e069a84a8f8f9fef238a625, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 503.84702
+      value: 496.383
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd67c0d25e069a84a8f8f9fef238a625, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 55.303196
+      value: 54.238
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd67c0d25e069a84a8f8f9fef238a625, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 361.71707
+      value: 351.128
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd67c0d25e069a84a8f8f9fef238a625, type: 3}
       propertyPath: m_LocalRotation.w

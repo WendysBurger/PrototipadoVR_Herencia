@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
 // Usar en un Empty independiente. Admite un Collider 3D existente.
@@ -19,6 +21,14 @@ public class TriggerDosAudiosCambioEscena : MonoBehaviour
     [Tooltip("Nombre exacto sin .unity, o ruta completa de la escena incluida en Build Profiles.")]
     [SerializeField] private string nombreEscenaDestino;
 
+    [Header("Fade out antes del cambio de escena")]
+    [Tooltip("Global Volume de la escena. Si se deja vacio se busca el primer Volume. No se modifica el Volume Profile guardado: el fade se hace sobre una copia en memoria.")]
+    [SerializeField] private Volume volumeFade;
+    [Tooltip("Segundos del fade a negro al terminar el segundo audio. 0 = sin fade.")]
+    [SerializeField, Min(0f)] private float duracionFadeOut = 2f;
+    [Tooltip("Baja tambien el volumen de todo el audio de la escena durante el fade.")]
+    [SerializeField] private bool bajarAudioGlobal = true;
+
     [Header("Bloqueo de repeticiones")]
     [Tooltip("Las copias de esta misma zona comparten ID. Usa otro ID para una secuencia independiente en la misma escena.")]
     [SerializeField] private string idInteraccion = "DosAudiosCambioEscena";
@@ -29,6 +39,7 @@ public class TriggerDosAudiosCambioEscena : MonoBehaviour
     private bool iniciada;
     private bool avisoConfiguracion;
     private static readonly HashSet<string> interaccionesIniciadas = new HashSet<string>();
+    private static float volumenGlobalPrevio = 1f;
 
     public bool YaIniciada => iniciada;
 
@@ -117,9 +128,56 @@ public class TriggerDosAudiosCambioEscena : MonoBehaviour
         yield return ReproducirCompleto(primerAudio);
         yield return ReproducirCompleto(segundoAudio);
 
-        // Sin espera adicional: inicia el cambio al terminar el segundo audio.
-        SceneManager.LoadSceneAsync(escenaDestino, LoadSceneMode.Single);
+        // Al terminar el segundo audio: carga la escena por detras, hace el fade a negro
+        // y solo entonces la activa.
+        AsyncOperation carga = SceneManager.LoadSceneAsync(escenaDestino, LoadSceneMode.Single);
+        carga.allowSceneActivation = false;
+        yield return FadeOut();
+        carga.allowSceneActivation = true;
         secuencia = null;
+    }
+
+    private IEnumerator FadeOut()
+    {
+        if (duracionFadeOut <= 0f) yield break;
+
+        // Fade con el Global Volume: Color Adjustments > Color Filter de blanco a negro.
+        ColorAdjustments ajuste = null;
+        Volume vol = volumeFade != null ? volumeFade : FindFirstObjectByType<Volume>();
+        if (vol != null)
+        {
+            vol.enabled = true;
+            vol.weight = 1f;
+            VolumeProfile perfil = vol.profile; // copia en memoria, no toca el asset
+            if (!perfil.TryGet(out ajuste)) ajuste = perfil.Add<ColorAdjustments>(true);
+            ajuste.active = true;
+            ajuste.colorFilter.overrideState = true;
+            ajuste.colorFilter.value = Color.white;
+        }
+        else Debug.LogWarning("TriggerDosAudiosCambioEscena: no hay Volume en la escena, el fade no se vera.", this);
+
+        if (bajarAudioGlobal)
+        {
+            volumenGlobalPrevio = AudioListener.volume;
+            SceneManager.sceneLoaded += RestaurarAudioGlobal;
+        }
+
+        float inicio = AudioListener.volume;
+        for (float t = 0f; t < duracionFadeOut; t += Time.unscaledDeltaTime)
+        {
+            float k = Mathf.SmoothStep(0f, 1f, t / duracionFadeOut);
+            if (ajuste != null) ajuste.colorFilter.value = Color.Lerp(Color.white, Color.black, k);
+            if (bajarAudioGlobal) AudioListener.volume = Mathf.Lerp(inicio, 0f, k);
+            yield return null;
+        }
+        if (ajuste != null) ajuste.colorFilter.value = Color.black;
+        if (bajarAudioGlobal) AudioListener.volume = 0f;
+    }
+
+    private static void RestaurarAudioGlobal(Scene escena, LoadSceneMode modo)
+    {
+        AudioListener.volume = volumenGlobalPrevio;
+        SceneManager.sceneLoaded -= RestaurarAudioGlobal;
     }
 
     private IEnumerator ReproducirCompleto(AudioClip clip)

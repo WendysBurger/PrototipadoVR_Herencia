@@ -18,7 +18,9 @@ public class Carta : MonoBehaviour
     {
         ReemplazarMaterial = 0,
         AgregarMaterial = 1,
-        ReemplazarDesdeOtroElement = 2
+        ReemplazarDesdeOtroElement = 2,
+        // No cambia materiales: hace que los materiales que ya tiene el Renderer brillen (emision).
+        BrilloEmisivo = 3
     }
 
     [System.Serializable]
@@ -33,6 +35,17 @@ public class Carta : MonoBehaviour
         [Min(0)] public int indiceMaterialAReemplazar = 0;
         [Tooltip("Solo para Reemplazar Desde Otro Element. Material existente que se copiara al destino. Para paredes_cuartos, escribe 11.")]
         [Min(0)] public int indiceMaterialOrigen = 11;
+
+        [Header("Solo para Brillo Emisivo")]
+        [Tooltip("Color de la luz que emite el material.")]
+        public Color colorBrillo = new Color(1f, 0.78f, 0.35f, 1f);
+        [Tooltip("Fuerza del brillo (valores altos = mas luminoso).")]
+        [Min(0f)] public float intensidadBrillo = 2.5f;
+        [Tooltip("Segundos que tarda en encenderse.")]
+        [Min(0f)] public float segundosEncendido = 1.5f;
+        [Tooltip("Variacion suave del brillo, como respirando. 0 = brillo fijo.")]
+        [Range(0f, 0.6f)] public float pulso = 0.25f;
+        [Min(0.1f)] public float velocidadPulso = 1.5f;
     }
 
     [Header("Deteccion")]
@@ -94,6 +107,7 @@ public class Carta : MonoBehaviour
         public Material[] originales;
         public Material[] iniciales;
         public Material[] finales;
+        public CambioMaterialObjeto brillo;
     }
 
     public Estado EstadoActual => estadoActual;
@@ -342,7 +356,7 @@ public class Carta : MonoBehaviour
                 continue;
             }
 
-            if (cambio.materialNuevo == null)
+            if (cambio.materialNuevo == null && cambio.tipoCambio != TipoCambioMaterial.BrilloEmisivo)
             {
                 Debug.LogError("Asigna Material Nuevo en '" + renderer.name +
                     "', o elige Reemplazar Desde Otro Element para usar un material del Renderer.", this);
@@ -355,7 +369,7 @@ public class Carta : MonoBehaviour
             // anterior, retirarlo al iniciar. Las submallas reales se conservan.
             int submallas = ObtenerCantidadSubmallas(renderer, originales.Length);
             for (int i = iniciales.Count - 1; i >= submallas; i--)
-                if (iniciales[i] == cambio.materialNuevo) iniciales.RemoveAt(i);
+                if (cambio.materialNuevo != null && iniciales[i] == cambio.materialNuevo) iniciales.RemoveAt(i);
 
             if (iniciales.Count == 0)
             {
@@ -381,6 +395,10 @@ public class Carta : MonoBehaviour
             {
                 finales.Add(cambio.materialNuevo);
             }
+            else if (cambio.tipoCambio == TipoCambioMaterial.BrilloEmisivo)
+            {
+                // Los materiales no cambian; el brillo se aplica al tocar la mesa.
+            }
             else
             {
                 Debug.LogError("Tipo Cambio invalido en '" + renderer.name + "'.", this);
@@ -393,7 +411,8 @@ public class Carta : MonoBehaviour
                 renderer = renderer,
                 originales = originales,
                 iniciales = iniciales.ToArray(),
-                finales = finales.ToArray()
+                finales = finales.ToArray(),
+                brillo = cambio.tipoCambio == TipoCambioMaterial.BrilloEmisivo ? cambio : null
             });
         }
         return true;
@@ -413,8 +432,47 @@ public class Carta : MonoBehaviour
         {
             if (datos.renderer == null) continue;
             datos.renderer.sharedMaterials = datos.finales;
+            if (datos.brillo != null) StartCoroutine(Brillar(datos.renderer, datos.brillo));
             if (mostrarMensajes)
                 Debug.Log("[AudioTriggerTresEstados] Materiales actualizados en '" + datos.renderer.name + "'.", this);
+        }
+    }
+
+    // Enciende la emision de los materiales del Renderer (copias solo de este objeto,
+    // los materiales guardados en el proyecto no se modifican) y luego respira suavemente.
+    private IEnumerator Brillar(Renderer renderer, CambioMaterialObjeto cfg)
+    {
+        if (renderer == null) yield break;
+        Material[] mats = renderer.materials;
+        bool alguno = false;
+        foreach (Material m in mats)
+        {
+            if (m == null || !m.HasProperty("_EmissionColor")) continue;
+            alguno = true;
+            m.EnableKeyword("_EMISSION");
+            m.globalIlluminationFlags = MaterialGlobalIlluminationFlags.RealtimeEmissive;
+            // Si el material tiene textura, la emision la conserva para que no se vea plano.
+            if (m.HasProperty("_EmissionMap") && m.GetTexture("_EmissionMap") == null &&
+                m.HasProperty("_BaseMap") && m.GetTexture("_BaseMap") != null)
+                m.SetTexture("_EmissionMap", m.GetTexture("_BaseMap"));
+            m.SetColor("_EmissionColor", Color.black);
+        }
+        if (!alguno)
+        {
+            Debug.LogWarning("Carta: el shader de '" + renderer.name + "' no tiene Emission; no se puede hacer brillar.", this);
+            yield break;
+        }
+
+        float t = 0f;
+        while (renderer != null)
+        {
+            t += Time.deltaTime;
+            float encendido = cfg.segundosEncendido <= 0f ? 1f : Mathf.SmoothStep(0f, 1f, t / cfg.segundosEncendido);
+            float respiro = 1f + cfg.pulso * Mathf.Sin(t * cfg.velocidadPulso * Mathf.PI * 2f);
+            Color e = cfg.colorBrillo.linear * (cfg.intensidadBrillo * encendido * respiro);
+            foreach (Material m in mats)
+                if (m != null && m.HasProperty("_EmissionColor")) m.SetColor("_EmissionColor", e);
+            yield return null;
         }
     }
 
