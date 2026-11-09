@@ -27,6 +27,14 @@ public class PantallaCarga : MonoBehaviour
     [SerializeField] private Sprite[] cuadros;
     [SerializeField, Min(0.05f)] private float segundosPorCuadro = 0.5f;
 
+    [Header("Imagen de controles (se muestra junto a la carga)")]
+    [Tooltip("Objeto con el Image a pantalla completa de los controles. Se activa con la carga. Opcional.")]
+    [SerializeField] private GameObject controles;
+    [SerializeField] private Image imagenControles;
+    [Tooltip("En orden: controles_1, controles_2. Se alternan en loop.")]
+    [SerializeField] private Sprite[] cuadrosControles;
+    [SerializeField, Min(0.1f)] private float segundosPorCuadroControles = 0.8f;
+
     [Header("Escena destino")]
     [Tooltip("Nombre exacto de la escena, debe estar en la Scene List del Build Profile.")]
     [SerializeField] private string escenaDestino = "Acto 1";
@@ -36,10 +44,13 @@ public class PantallaCarga : MonoBehaviour
     private bool iniciado;
     private int cuadroActual;
     private float tiempoCuadro;
+    private int controlActual;
+    private float tiempoControl;
 
     private void Awake()
     {
         if (panelCarga != null) panelCarga.SetActive(false);
+        if (controles != null) controles.SetActive(false);
     }
 
     public void Comenzar()
@@ -78,6 +89,10 @@ public class PantallaCarga : MonoBehaviour
             Color c = fondo.color; c.a = 1f; fondo.color = c;
         }
 
+        if (controles != null) controles.SetActive(true);
+        controlActual = 0;
+        tiempoControl = 0f;
+        MostrarControl();
         if (panelCarga != null) panelCarga.SetActive(true);
         cuadroActual = 0;
         tiempoCuadro = 0f;
@@ -105,6 +120,7 @@ public class PantallaCarga : MonoBehaviour
 
     private void Animar()
     {
+        AnimarControles();
         if (cuadros == null || cuadros.Length == 0) return;
         tiempoCuadro += Time.unscaledDeltaTime;
         if (tiempoCuadro < segundosPorCuadro) return;
@@ -118,5 +134,22 @@ public class PantallaCarga : MonoBehaviour
         if (imagenCarga == null || cuadros == null || cuadros.Length == 0) return;
         Sprite s = cuadros[cuadroActual];
         if (s != null) imagenCarga.sprite = s;
+    }
+
+    private void AnimarControles()
+    {
+        if (cuadrosControles == null || cuadrosControles.Length < 2) return;
+        tiempoControl += Time.unscaledDeltaTime;
+        if (tiempoControl < segundosPorCuadroControles) return;
+        tiempoControl -= segundosPorCuadroControles;
+        controlActual = (controlActual + 1) % cuadrosControles.Length;
+        MostrarControl();
+    }
+
+    private void MostrarControl()
+    {
+        if (imagenControles == null || cuadrosControles == null || cuadrosControles.Length == 0) return;
+        Sprite s = cuadrosControles[controlActual];
+        if (s != null) imagenControles.sprite = s;
     }
 }

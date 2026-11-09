@@ -58,6 +58,13 @@ public class Semillas : MonoBehaviour
     [Tooltip("Velocidad del giro en grados por segundo.")]
     [SerializeField, Min(0.01f)] private float velocidadGiro = 90f;
 
+    [Header("Estado 3: giro extra entre el punto 2 y el punto 3")]
+    [Tooltip("Al llegar al punto 2 gira estos grados adicionales hacia la izquierda mientras camina hacia el punto 3.")]
+    [SerializeField] private bool girarEntrePunto2Y3 = true;
+    [SerializeField, Range(0f, 180f)] private float gradosGiroEntrePunto2Y3 = 45f;
+    [Tooltip("Activado: gira de golpe al llegar al punto 2. Desactivado: gira poco a poco durante el tramo hacia el punto 3.")]
+    [SerializeField] private bool giroEntrePunto2Y3Inmediato = true;
+
     [Header("Aura: material adicional en Element 1")]
     [Tooltip("Renderer que tiene el material base y el aura adicional. No se apaga la malla.")]
     [SerializeField] private Renderer rendererAura;
@@ -221,6 +228,7 @@ public class Semillas : MonoBehaviour
         bool giroTerminado = !girarALaIzquierda || destinos.Length == 0 || objetoEstado3 == null;
         Quaternion rotacionFinal = giroTerminado ? Quaternion.identity :
             Quaternion.AngleAxis(-gradosGiroIzquierda, Vector3.up) * objetoEstado3.rotation;
+        float velocidadGiroActual = velocidadGiro;
         do
         {
             if ((siguientePunto < destinos.Length || !giroTerminado) && objetoEstado3 == null)
@@ -232,7 +240,7 @@ public class Semillas : MonoBehaviour
             if (!giroTerminado)
             {
                 AsignarRotacion(objetoEstado3, Quaternion.RotateTowards(
-                    objetoEstado3.rotation, rotacionFinal, Mathf.Max(0.01f, velocidadGiro) * Time.deltaTime));
+                    objetoEstado3.rotation, rotacionFinal, Mathf.Max(0.01f, velocidadGiroActual) * Time.deltaTime));
                 if (Quaternion.Angle(objetoEstado3.rotation, rotacionFinal) <= 0.1f)
                 {
                     AsignarRotacion(objetoEstado3, rotacionFinal);
@@ -250,6 +258,30 @@ public class Semillas : MonoBehaviour
                     AsignarPosicion(objetoEstado3, destino);
                     siguientePunto++;
                     if (mostrarMensajes) Debug.Log("[Semillas] Punto " + siguientePunto + " alcanzado.", this);
+
+                    // Giro extra hacia la izquierda al llegar al punto 2, antes de ir al punto 3.
+                    // Inmediato (de golpe) o repartido durante el tramo, segun Giro Entre Punto 2 Y 3 Inmediato.
+                    if (siguientePunto == 2 && girarEntrePunto2Y3 && gradosGiroEntrePunto2Y3 > 0f &&
+                        objetoEstado3 != null && destinos.Length == 3)
+                    {
+                        Quaternion giroExtra = Quaternion.AngleAxis(-gradosGiroEntrePunto2Y3, Vector3.up);
+                        if (giroEntrePunto2Y3Inmediato)
+                        {
+                            // Gira de golpe. Si el giro inicial sigue en curso, su destino tambien se corre 45 grados.
+                            AsignarRotacion(objetoEstado3, giroExtra * objetoEstado3.rotation);
+                            if (!giroTerminado) rotacionFinal = giroExtra * rotacionFinal;
+                        }
+                        else
+                        {
+                            Quaternion rotacionBase = giroTerminado ? objetoEstado3.rotation : rotacionFinal;
+                            rotacionFinal = giroExtra * rotacionBase;
+                            float duracionTramo = Vector3.Distance(destinos[1], destinos[2]) / Mathf.Max(0.01f, velocidad);
+                            float gradosPendientes = Quaternion.Angle(objetoEstado3.rotation, rotacionFinal);
+                            velocidadGiroActual = duracionTramo > 0.01f ? gradosPendientes / duracionTramo : velocidadGiro;
+                            giroTerminado = false;
+                        }
+                        if (mostrarMensajes) Debug.Log("[Semillas] Giro extra de " + gradosGiroEntrePunto2Y3 + " grados hacia la izquierda entre el punto 2 y el punto 3.", this);
+                    }
                 }
             }
             yield return null;
