@@ -8868,6 +8868,130 @@ Transform:
   - {fileID: 333076591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &950000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950000002}
+  - component: {fileID: 950000003}
+  m_Layer: 0
+  m_Name: Humo olla
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 504.525, y: 56.424, z: 363.604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &950000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8eac9ae36544f468db25f88034bffa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HumoOlla
+  jugador: {fileID: 0}
+  distanciaActivacion: 2.5
+  margenApagado: 0.6
+  materialHumo: {fileID: 0}
+  colorHumo: {r: 0.92, g: 0.92, b: 0.92, a: 0.5}
+  particulasPorSegundo: 9
+  tamanoMin: 0.12
+  tamanoMax: 0.22
+  vidaMin: 2.5
+  vidaMax: 3.5
+  velocidadSubida: 0.2
+  radioBoca: 0.07
+  ondulacion: 0.12
+  segundosTransicion: 1.2
+  mostrarMensajes: 0
+--- !u!1 &970000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970000002}
+  - component: {fileID: 970000003}
+  m_Layer: 0
+  m_Name: Luz guia puerta semillas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.5663178, z: -0, w: 0.824187}
+  m_LocalPosition: {x: -3.6590579, y: -0.399971, z: -0.2932739}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1433331489}
+  m_LocalEulerAnglesHint: {x: 0, y: -68.988, z: 0}
+--- !u!114 &970000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1184b7d78f45ac9bbb0d3f497a2148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuzGuiaPuerta
+  olla: {fileID: 352460961}
+  esperaTrasOlla: 1
+  puerta: {fileID: 1433331489}
+  seguirPuerta: 1
+  gradosInicioDesvanecer: 2
+  gradosApertura: 35
+  tamanoZona: {x: 0.73, y: 2, z: 0.08}
+  colorLuz: {r: 1, g: 0.78, b: 0.35, a: 1}
+  materialLuz: {fileID: 0}
+  particulasPorSegundo: 40
+  tamanoMin: 0.035
+  tamanoMax: 0.06
+  vidaMin: 2
+  vidaMax: 3.5
+  velocidadSubida: 0.15
+  usarHalo: 1
+  tamanoHalo: 1.1
+  opacidadHalo: 0.3
+  segundosEncendido: 2
+  segundosApagado: 1.5
+  mostrarMensajes: 0
 --- !u!1001 &973292349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13269,6 +13393,7 @@ Transform:
   m_Children:
   - {fileID: 827497246}
   - {fileID: 1772189705}
+  - {fileID: 970000002}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1433331490
@@ -20190,6 +20315,69 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &980000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 980000002}
+  - component: {fileID: 980000003}
+  m_Layer: 0
+  m_Name: Aura maceta semillas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &980000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 497.45, y: 55.05, z: 348.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &980000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a907974fc4a40979f0600b1e59e560f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuzGuiaSnap
+  semillas: {fileID: 1355929456}
+  momento: 1
+  esperaTrasMomento: 0.5
+  snap: {fileID: 111522181}
+  colorLuz: {r: 0.7, g: 0.78, b: 0.28, a: 1}
+  materialLuz: {fileID: 0}
+  particulasPorSegundo: 35
+  tamanoMin: 0.03
+  tamanoMax: 0.055
+  vidaMin: 2
+  vidaMax: 3.5
+  velocidadSubida: 0.12
+  radioZona: 0.25
+  usarHalo: 1
+  tamanoHalo: 0.9
+  opacidadHalo: 0.35
+  segundosEncendido: 2
+  segundosApagado: 1.5
+  mostrarMensajes: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -20258,3 +20446,5 @@ SceneRoots:
   - {fileID: 1746409506}
   - {fileID: 1061196977}
   - {fileID: 940000002}
+  - {fileID: 950000002}
+  - {fileID: 980000002}

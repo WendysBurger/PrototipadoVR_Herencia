@@ -92,6 +92,9 @@ public class Semillas : MonoBehaviour
 
     public Estado EstadoActual => estadoActual;
 
+    // Verdadero cuando el objeto del Estado 3 (Yta) ya llego al ultimo punto y termino de girar.
+    public bool RutaTerminada { get; private set; }
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void ReiniciarBloqueosAlIniciarPartida()
     {
@@ -284,6 +287,7 @@ public class Semillas : MonoBehaviour
                     }
                 }
             }
+            if (!RutaTerminada && siguientePunto >= destinos.Length && giroTerminado) RutaTerminada = true;
             yield return null;
         }
         while (siguientePunto < destinos.Length || !giroTerminado || fuenteAudio.isPlaying || AudioListener.pause);

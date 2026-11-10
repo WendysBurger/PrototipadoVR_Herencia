@@ -12071,6 +12071,67 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1522412295}
   m_SourcePrefab: {fileID: 100100000, guid: 7b8c317f8e96c67478f371cbc5e84dda, type: 3}
+--- !u!1 &960000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 960000002}
+  - component: {fileID: 960000003}
+  m_Layer: 0
+  m_Name: Luz guia carta
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &960000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 504.9281, y: 55.7, z: 363.07156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &960000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267e481c1f3843df9e04547f476ed021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LuzGuiaCarta
+  carta: {fileID: 1018808366}
+  distanciaApagadoRespaldo: 0.7
+  colorLuz: {r: 1, g: 0.78, b: 0.35, a: 1}
+  materialLuz: {fileID: 0}
+  particulasPorSegundo: 30
+  tamanoMin: 0.035
+  tamanoMax: 0.06
+  vidaMin: 2
+  vidaMax: 3.5
+  velocidadSubida: 0.15
+  radioZona: 0.16
+  usarHalo: 1
+  tamanoHalo: 0.6
+  opacidadHalo: 0.5
+  segundosEncendido: 1.5
+  segundosApagado: 1.5
+  mostrarMensajes: 0
 --- !u!1 &979584725
 GameObject:
   m_ObjectHideFlags: 0
@@ -22113,3 +22174,4 @@ SceneRoots:
   - {fileID: 1262335390}
   - {fileID: 1900580427}
   - {fileID: 2071513576}
+  - {fileID: 960000002}

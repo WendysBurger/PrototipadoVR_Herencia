@@ -29,6 +29,9 @@ public class cocina: MonoBehaviour
 
     public int EstadoActual => estadoActual;
 
+    // Verdadero cuando ya sonaron todos los audios de la secuencia (por ejemplo, la olla).
+    public bool Terminada => audios != null && audios.Length > 0 && estadoActual >= audios.Length;
+
     private void Awake()
     {
         fuenteAudio = GetComponent<AudioSource>();
